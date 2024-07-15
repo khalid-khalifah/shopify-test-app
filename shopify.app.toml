@@ -1,0 +1,33 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "e3ba64b4819d2a985079fa2582148ba7"
+name = "khalid-test-app"
+handle = "khalid-test-app"
+application_url = "https://arctic-landscape-bm-ware.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "quickstart-464cef75.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://arctic-landscape-bm-ware.trycloudflare.com/auth/callback",
+  "https://arctic-landscape-bm-ware.trycloudflare.com/auth/shopify/callback",
+  "https://arctic-landscape-bm-ware.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-07"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks"
+
+[pos]
+embedded = false
